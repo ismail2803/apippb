@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Wisata extends Model
 {
     use HasFactory;
-    protected $fillable = ['nama', 'alamat', 'deskripsi', 'path'];
+    protected $fillable = ['nama', 'alamat', 'latitude', 'longitude', 'deskripsi', 'kategori', 'path'];
 }

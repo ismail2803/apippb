@@ -15,7 +15,10 @@ class WisataController extends Controller
         $data = Wisata::create([
             'nama' => $request->input('nama'),
             'alamat' => $request->input('alamat'),
+            'latitude' => $request->input('latitude'),
+            'longitude' => $request->input('longitude'),
             'deskripsi' => $request->input('deskripsi'),
+            'kategori' => $request->input('kategori'),
             'path' => 'storage/fotowisata/' . $filename,
         ]);
 
@@ -23,9 +26,10 @@ class WisataController extends Controller
         return response()->json($data, 201);
     }
 
-    public function list()
+    public function datakategori($kategori)
     {
-        $data = Wisata::get();
+        $data = Wisata::where('kategori', $kategori)->get();
         return response()->json($data, 200);
     }
+
 }

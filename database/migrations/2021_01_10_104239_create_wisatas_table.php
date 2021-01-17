@@ -17,7 +17,10 @@ class CreateWisatasTable extends Migration
             $table->id();
             $table->string('nama', 100);
             $table->string('alamat', 100);
+            $table->string('latitude', 100);
+            $table->string('longitude', 100);
             $table->text('deskripsi');
+            $table->string('kategori', 50);
             $table->text('path');
             $table->timestamps();
         });
